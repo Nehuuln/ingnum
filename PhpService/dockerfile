@@ -1,0 +1,9 @@
+FROM php:7.4-apache
+
+VOLUME /tmp
+
+EXPOSE 80
+
+ADD index.php /var/www/html/
+
+CMD ["apache2-foreground"]
