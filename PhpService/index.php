@@ -1,13 +1,12 @@
 <?php
-$prenom = 'Maxime';
+header('Content-Type: application/json');
+
+$name = isset($_GET['name']) ? htmlspecialchars($_GET['name']) : 'Unknown';
+
+$response = [
+    'customer' => $name,
+    'address' => '1 Rue de Paris, 75000 Paris',
+];
+
+echo json_encode($response);
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-    <p>Je suis <?php echo $prenom; ?></p>
-</body>
-</html>
